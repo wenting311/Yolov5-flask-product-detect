@@ -1,0 +1,75 @@
+{
+    "model" : {
+        "min_input_size":       288,
+        "max_input_size":       448,
+        "anchors":              [55,65, 84,128, 134,71, 155,205, 163,115, 233,286, 250,135, 311,223, 355,349],
+        "labels":               [
+                                    "carrot_eggs",
+                                    "chicken_nuggets",
+                                    "chinese_cabbage",
+                                    "chinese_sausage",
+                                    "curry",
+                                    "fried_chicken",
+                                    "fried_dumplings",
+                                    "fried_eggs",
+                                    "mung_bean_sprouts",
+                                    "rice",
+                                    "triangle_hash_brown",
+                                    "water_spinach"
+                                ]
+    },
+
+    "train": {
+        "train_image_folder":   "data/train/imgs/",
+        "train_annot_folder":   "data/train/anns/",
+        "max_train_ints":       -1,
+        "cache_name":           "tmp/train.pkl",
+
+        "train_times":          5,
+        "batch_size":           8,
+        "learning_rate":        1e-4,
+        "init_epoch":           0,
+        "nb_epochs":            100,
+        "warmup_epochs":        3,
+        "ignore_thresh":        0.5,
+        "gpus":                 "0",
+
+        "grid_scales":          [1,1,1],
+        "obj_scale":            5,
+        "noobj_scale":          1,
+        "xywh_scale":           1,
+        "class_scale":          1,
+
+        "tensorboard_dir":      "logs/",
+        "saved_weights_name":   "cafeteria.h5"
+    },
+
+    "valid": {
+        "valid_image_folder":   "data/valid/imgs/",
+        "valid_annot_folder":   "data/valid/anns/",
+        "cache_name":           "tmp/val.pkl",
+        "valid_times":          1
+    },
+
+    "test": {
+        "test_image_folder":   "data/test/imgs/",
+        "test_annot_folder":   "data/test/anns/",
+        "cache_name":           "tmp/test.pkl",
+        "test_times":           1
+    },
+
+    "entrees": {
+        "carrot_eggs":          {"serving_amount":  70, "amount_unit":   "g", "fat":   1.9, "carbohydrate":  4.2, "protein":  3.2, "price": 10},
+        "chicken_nuggets":      {"serving_amount":   4, "amount_unit": "pc.", "fat":  12.0, "carbohydrate": 12.0, "protein":  9.0, "price": 15},
+        "chinese_cabbage":      {"serving_amount":  70, "amount_unit":   "g", "fat":   0.1, "carbohydrate":  2.2, "protein":  0.8, "price": 10},
+        "chinese_sausage":      {"serving_amount":   6, "amount_unit": "pc.", "fat":   7.2, "carbohydrate":  3.8, "protein":  3.8, "price": 10},
+        "curry":                {"serving_amount": 170, "amount_unit":   "g", "fat":   7.1, "carbohydrate": 16.5, "protein": 10.7, "price": 10},
+        "fried_chicken":        {"serving_amount":   1, "amount_unit": "pc.", "fat":  19.4, "carbohydrate": 12.4, "protein": 11.3, "price": 30},
+        "fried_dumplings":      {"serving_amount":   4, "amount_unit": "pc.", "fat":  16.0, "carbohydrate": 20.0, "protein":  8.0, "price": 15},
+        "fried_eggs":           {"serving_amount":   1, "amount_unit": "pc.", "fat":  15.0, "carbohydrate":  1.4, "protein": 13.5, "price": 10},
+        "mung_bean_sprouts":    {"serving_amount":  70, "amount_unit":   "g", "fat":   5.3, "carbohydrate":  7.1, "protein": 12.2, "price": 10},
+        "rice":                 {"serving_amount": 260, "amount_unit":   "g", "fat":   0.8, "carbohydrate": 93.6, "protein":  7.2, "price": 10},
+        "triangle_hash_brown":  {"serving_amount":   4, "amount_unit": "pc.", "fat":  18.4, "carbohydrate": 44.8, "protein":  2.8, "price": 15},
+        "water_spinach":        {"serving_amount":  70, "amount_unit":   "g", "fat":   2.3, "carbohydrate":  2.9, "protein":  2.6, "price": 10}
+    }
+}
